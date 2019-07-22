@@ -1,0 +1,19 @@
+{ 
+  // 1、配置--exec babel-node 需要安装babel-cli以使用import from 的导入方式
+  // 2、使用sass  sass-loader node-sass
+  "presets": ["es2015"],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
