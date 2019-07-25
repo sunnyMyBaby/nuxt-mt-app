@@ -1,5 +1,9 @@
 
 module.exports = {
+  server: {
+    port: 3333, // default: 3000
+    host: '0.0.0.0' // default: localhost
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -24,8 +28,8 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/reset.css',
-    'element-ui/lib/theme-chalk/index.css'
-    // '~assets/css/main.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -37,6 +41,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // 这里边引进来之后我们就可以通过this.$axios使用了
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module'
