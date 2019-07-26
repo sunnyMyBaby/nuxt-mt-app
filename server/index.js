@@ -23,6 +23,7 @@ import geo from './interface/geo'
 
 import search from './interface/search'
 
+import categroy from './interface/categroy'
 const app = new Koa()
 config.dev = !(app.env === 'production')
 
@@ -74,6 +75,7 @@ async function start() {
   app.use(users.routes()).use(users.allowedMethods())
   app.use(geo.routes()).use(geo.allowedMethods())
   app.use(search.routes()).use(search.allowedMethods())
+  app.use(categroy.routes()).use(categroy.allowedMethods())
 
   app.use((ctx) => {
     ctx.status = 200
